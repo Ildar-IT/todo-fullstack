@@ -1,0 +1,27 @@
+services:
+  todonest:
+    build: backend
+    ports:
+      - 4000:4000
+    depends_on:
+      - pgdb
+    restart: always
+  pgdb:
+    container_name: pgdb
+    image: postgres:12
+    env_file:
+      - backend/.development.env
+    environment:
+      PG_DATA: /var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+  todofront:
+    build: frontend
+    restart: always
+    ports:
+      - 3000:3000
+volumes:
+  postgres_data:

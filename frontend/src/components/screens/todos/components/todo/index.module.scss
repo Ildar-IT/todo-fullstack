@@ -1,0 +1,92 @@
+
+
+.todo {
+  height: 200px;
+  border-radius:  10px;
+  background: $main-bg-2;
+  padding: 24px 12px;
+  display: grid;
+  grid-template-columns: 300px 170px 20px;
+  justify-content: space-between;
+
+}
+
+.title {
+  h4 {
+    width: 300px;
+    font-size: 22px;
+    font-weight: 600;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  p {
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: normal;
+    color: $text-color-2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.info {
+  flex: 0 0 auto;
+  width: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  color: $text-color-2;
+  span {
+    margin-left: 5px;
+    color: $text-color;
+    font-weight: 600;
+
+  }
+}
+
+.btns {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  max-height: 80px;
+  gap: 10px;
+  justify-content: space-between;
+
+  button {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    svg {
+      width: 100%;
+      height: 100%;
+      @include transition();
+    }
+  }
+
+  .btnStatus {
+    svg {
+      path {
+        stroke: $main-bg-3;
+      }
+    }
+    &Success {
+      svg {
+        path {
+          stroke: $main-bg-10;
+        }
+      }
+    }
+  }
+}
+

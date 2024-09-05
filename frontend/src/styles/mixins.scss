@@ -1,0 +1,23 @@
+@mixin up($value, $prop: min-width) {
+  @media only screen and (#{$prop}: #{$value}) {
+    @content;
+  }
+}
+
+@mixin adopt($value, $prop: max-width) {
+  @media only screen and (#{$prop}: #{$value}) {
+    @content;
+  }
+}
+
+@mixin transition() {
+  transition: all 0.2s ease-in-out;
+}
+
+@mixin transition-long() {
+  transition: 0.4s ease-out;
+}
+
+@mixin transition-background() {
+  transition: background-color 1s;
+}
